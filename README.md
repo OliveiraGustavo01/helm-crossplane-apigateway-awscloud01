@@ -135,13 +135,10 @@ restapi:
         }
       })}
 ```
-<details>
-</details>
----
+
+
 ### Notes:
  
 - For requestParameters and other possibilities of x-amazon-apigateway-integration, please refer to the Official AWS Documentation.
-
 Happy Deploying!
 
----

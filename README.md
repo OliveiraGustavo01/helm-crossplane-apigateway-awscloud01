@@ -76,6 +76,14 @@ This configuration sets up a Crossplane provider to interact with AWS API Gatewa
 
 This Helm chart performs the creation of the AWS API Gateway (RestAPI) resource via Crossplane, enabling the creation of a fully customized body as shown in the Official AWS Documentation. We are demonstrating only a few functionalities in the examples below, with emphasis on the x-amazon-apigateway-integration and the creation of multiple paths and their configurations.
 
+## Setup the Helm Chart to RESTAPI:
+Command to perform the Helm Chart deployment:
+
+````bash
+
+helm install restapi-crossplane . --namespace crossplane-system  -f values.yaml
+
+````
 
 ## Custom values
  ````values.yaml````
@@ -128,17 +136,6 @@ restapi:
       })}
 ```
 <details>
-
-
-
-## Setup the Helm Chart to RESTAPI:
-Command to perform the Helm Chart deployment:
-
-````bash
-
-helm install restapi-crossplane . --namespace crossplane-system  -f values.yaml
-
-````
 ---
 ### Notes:
  

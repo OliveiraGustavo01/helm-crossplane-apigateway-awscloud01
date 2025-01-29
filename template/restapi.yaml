@@ -1,0 +1,17 @@
+apiVersion: apigateway.aws.upbound.io/v1beta1
+kind: RestAPI
+metadata:
+  name: {{ .Values.restapi.name }}
+  annotations:
+    meta.upbound.io/contaazul-id: apigateway/v1beta1/integrationresponse
+  labels:
+    testing.upbound.io/contaazul-name: integration
+spec:
+  providerConfigRef:
+    name: {{ .Values.restapi.providerConfigRef }}
+  forProvider:
+    description: {{ .Values.restapi.description }}
+    name: {{ .Values.restapi.name }}
+    region: {{ .Values.restapi.region }}
+    endpointConfiguration: {{ .Values.restapi.endpointConfiguration | toYaml | nindent 6 }}
+    body: {{ .Values.restapi.body | nindent 6 | trim | quote }}

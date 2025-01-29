@@ -7,8 +7,6 @@ This repository contains the Helm values to deploy [Crossplane](https://github.c
 
 📖 [CrossPlane](https://docs.crossplane.io/latest/)
 
-📖 [SRE Deployment Guide](./docs/sre-deployment-guide.md)
-
 ## Prerequisites
 Before diving into the deployment process, make sure you satisfy the following criteria:
 

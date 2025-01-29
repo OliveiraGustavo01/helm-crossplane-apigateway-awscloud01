@@ -14,7 +14,7 @@ Before diving into the deployment process, make sure you satisfy the following c
 
 - **Cluster Configuration**: Ensure you have access to and have configured the clusters you're deploying to. 
 - **Clone the Repository**: Clone this repository to your local machine.
-- 
+  
 ## Setup the Helm Chart to crossplane:
 Command to perform the Helm Chart deployment:
 

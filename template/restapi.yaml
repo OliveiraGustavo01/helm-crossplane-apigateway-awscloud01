@@ -3,9 +3,9 @@ kind: RestAPI
 metadata:
   name: {{ .Values.restapi.name }}
   annotations:
-    meta.upbound.io/contaazul-id: apigateway/v1beta1/integrationresponse
+    meta.upbound.io/project-id: apigateway/v1beta1/integrationresponse
   labels:
-    testing.upbound.io/contaazul-name: integration
+    testing.upbound.io/project-name: integration
 spec:
   providerConfigRef:
     name: {{ .Values.restapi.providerConfigRef }}

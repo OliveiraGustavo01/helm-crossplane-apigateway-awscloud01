@@ -1,0 +1,50 @@
+restapi:
+  providerConfigRef: aws-provider-apw
+  name: api-rest
+  description: "This is my API for demonstration"
+  region: us-east-1
+  endpointConfiguration: [
+    types: [PRIVATE],
+    vpcEndpointIds: [vpce-your-vpc-endpoint-id]
+  ]
+  body: >-
+    ${jsonencode({
+        openapi = "3.0.1"
+        info = {
+          title   = "example"
+          version = "1.0"
+        }
+        requestParameters = {
+          integration.request.path.stage = "method.request.querystring.version"
+          integration.request.querystring.provider = "method.request.querystring.vendor"
+        }
+        paths = {
+          "/example" = {
+            get = {
+              x-amazon-apigateway-integration = {
+                httpMethod           = "GET"
+                payloadFormatVersion = "1.0"
+                type                 = "HTTP_PROXY"
+                uri                  = "http://my-service.k8s.local/api/example"
+                connectionType       = "VPC_LINK"
+                connectionId         = "just a example"
+              }
+            }
+          }
+          "/example/two" = {
+            any = {
+              x-amazon-apigateway-integration = {
+                httpMethod           = "GET"
+                payloadFormatVersion = "1.0"
+                type                 = "HTTP_PROXY"
+                uri                  = "http://my-service.k8s.local/api/example/two"
+                connectionType       = "VPC_LINK"
+                connectionId         = "just a example two"
+                requestParameters = {
+                  "integration.request.header.example-header" = "'app-example-header'" 
+                }
+              }
+            }
+          }
+        }
+      })}

@@ -1,3 +1,5 @@
+![screenshot](Helm&Crossplane.drawio.png)
+
 # Crossplane
 This repository contains the Helm values to deploy [Crossplane](https://github.com/crossplane/crossplane) to the Kubernetes clusters, with an API Gateway as an example.
 
